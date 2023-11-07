@@ -1,4 +1,4 @@
-import './Line.css';
+import '../styles/Line.css';
 
 const Line = () => (
   <div className="Line" />
