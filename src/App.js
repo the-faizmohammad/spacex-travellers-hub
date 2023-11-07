@@ -1,8 +1,17 @@
+import { Routes, Route} from 'react-router-dom';
+import './App.css';
+import NavBar from './components/NavBar';
+import Mission from './components/Rockets';
+
 function App() {
   return (
-    <div>
-      <h1>This is me</h1>
-    </div>
+    <>
+    <NavBar /> 
+    <Routes>
+     <Route path="/" element={<Mission />} />
+
+    </Routes>
+    </>
   );
 }
 
