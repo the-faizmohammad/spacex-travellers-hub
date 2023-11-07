@@ -8,16 +8,16 @@ import Dragons from './components/dragons';
 
 function App() {
   return (
-    <>
+    <div>
       <Navbar />
       <Line />
       <Routes>
-        <Route path="/missions" element={<Missions />} />
-        <Route path="/dragons" element={<Dragons />} />
-        <Route path="/my-profile" element={<MyProfile />} />
-        <Route path="/" element={<Rockets />} />
+      <Route path="/" element={<rockets />} />
+        <Route path="/missions" element={<missions />} />
+        <Route path="/dragons" element={<dragons />} />
+        <Route path="/my-profile" element={<my-profile />} />
       </Routes>
-    </>
+    </div>
   );
 }
 
