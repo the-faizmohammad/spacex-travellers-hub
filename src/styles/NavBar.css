@@ -10,3 +10,16 @@
 .active {
   background-color: beige;
 }
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
+}

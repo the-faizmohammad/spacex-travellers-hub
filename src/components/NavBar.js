@@ -6,12 +6,14 @@ const NavBar = () => {
   const Links = [
     { path: '/', title: 'Rockets', className: 'navlink' },
     { path: '/mission', title: 'mission', className: 'navlink' },
+    { path: '/dragons', title: 'Dragons', className: 'navlink' },
+    { path: '/MyProfile', title: 'MyProfile', className: 'navlink' },
   ];
   return (
-    <nav>
+    <nav className="nav-container">
       <div className="logo-section">
         <LogoImg />
-        <h2>Space Travellers Hub</h2>
+        <h5>Space Travellers Hub</h5>
       </div>
       <div className="nav-links">
         {Links.map((link) => (
