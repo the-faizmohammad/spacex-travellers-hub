@@ -18,8 +18,8 @@
 
 .nav-links {
   display: flex;
-    justify-content: space-between;
-    list-style: none;
-    gap: 20px;
-    align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  gap: 20px;
+  align-items: center;
 }

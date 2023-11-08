@@ -10,7 +10,7 @@ const NavBar = () => {
     { path: '/MyProfile', title: 'MyProfile', className: 'navlink' },
   ];
   return (
-    <nav className='nav-container'>
+    <nav className="nav-container">
       <div className="logo-section">
         <LogoImg />
         <h5>Space Travellers Hub</h5>
