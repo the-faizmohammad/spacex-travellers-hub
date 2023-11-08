@@ -8,7 +8,7 @@ export const rocketsSlice = createSlice({
     error: null,
   },
   reducers: {
-    // We will Add  reducers 
+    // We will Add  reducers
   },
 });
 
