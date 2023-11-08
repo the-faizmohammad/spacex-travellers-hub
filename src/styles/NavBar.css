@@ -1,8 +1,8 @@
 .logo-section {
-    display: flex;
-    gap: 0.8rem;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    font-weight: 600;
-  }
+  display: flex;
+  gap: 0.8rem;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: 600;
+}
