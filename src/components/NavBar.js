@@ -16,7 +16,7 @@ const NavBar = () => {
       <div className="nav-links">
         {Links.map((link) => (
           <li className={link.className} key={link.title}>
-            <NavLink to={link.path}>{link.title}</NavLink>
+            <NavLink to={link.path} exact activeClassName="active">{link.title}</NavLink>
           </li>
         ))}
       </div>
