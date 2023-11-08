@@ -6,6 +6,7 @@ const NavBar = () => {
   const Links = [
     { path: '/', title: 'Rockets', className: 'navlink' },
     { path: '/mission', title: 'mission', className: 'navlink' },
+    { path: '/dragons-setup', title: 'Dragons', className: 'navlink' },
   ];
   return (
     <nav>

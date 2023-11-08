@@ -12,6 +12,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Rockets />} />
         <Route path="/mission" element={<Mission />} />
+        <Route exact path="/dragons-setup" component={DragonsSetup} />
 
       </Routes>
     </>
