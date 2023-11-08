@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import LogoImg from './Logo';
+import '../styles/NavBar.css';
 
 const NavBar = () => {
   const Links = [
