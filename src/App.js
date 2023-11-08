@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar';
-import Mission from './components/Rockets';
+import Rockets from './components/Rockets';
+import Mission from './components/Mission';
 import Line from './components/Line';
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
       <NavBar />
       <Line />
       <Routes>
-        <Route path="/" element={<Mission />} />
+        <Route path="/" element={<Rockets />} />
+        <Route path="/mission" element={<Mission />} />
 
       </Routes>
     </>

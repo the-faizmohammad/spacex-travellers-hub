@@ -5,6 +5,7 @@ import rocketsReducer from './rocketsSlice';
 const store = configureStore({
   reducer: {
     rockets: rocketsReducer,
+    mission: missionReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
