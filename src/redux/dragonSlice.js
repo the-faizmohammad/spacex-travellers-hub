@@ -38,4 +38,4 @@ const dragonSlice = createSlice({
 
 });
 
-export default dragonSlice;
+export default dragonSlice.reducer;
