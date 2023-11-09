@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
 import { fetchdragons } from '../redux/dragonSlice';
 
 const Dragons = () => {
@@ -17,16 +18,20 @@ const Dragons = () => {
 
   return (
     <div>
-      <h1>Dragons</h1>
+      <h1 className="mb-4">Dragons</h1>
       {dragonsData.map((dragon) => (
-        <div key={dragon.id}>
-          <h2>{dragon.name}</h2>
-          <p>
-            Type:
-            {dragon.type}
-          </p>
-          <img src={dragon.flickr_images[0]} alt={dragon.name} />
-        </div>
+        <Card key={dragon.id} className="mb-3">
+          <Card.Img variant="top" src={dragon.flickr_images[0]} alt={dragon.name} />
+          <Card.Body>
+            <Card.Title>{dragon.name}</Card.Title>
+            <ListGroup className="list-group-flush">
+              <ListGroupItem>
+                Type:
+                {dragon.type}
+              </ListGroupItem>
+            </ListGroup>
+          </Card.Body>
+        </Card>
       ))}
     </div>
   );
