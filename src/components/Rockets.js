@@ -35,9 +35,37 @@ const Rockets = () => {
     contentToDisplay = rockets.map((data) => (
       <div key={data.id}>
         <h2>{data.rocket_name}</h2>
+
         <p>{data.description}</p>
         <img src={data.flickr_images[0]} alt={data.rocket_name} style={{ width: '100px', height: '100px' }} />
-        <p>{data.description}</p>
+        <p>
+          {data.reserved && (
+            <span
+              style={{
+                marginRight: 10,
+                border: '1px solid',
+                padding: '2px 4px',
+                backgroundColor: 'aqua',
+                color: 'white',
+              }}
+            >
+              Reserved
+            </span>
+          )}
+        </p>
+        <button
+          onClick={() => handleReserveRocket(data.id)}
+          type="button"
+          style={{
+            margin: '5px',
+            padding: '5px 10px',
+            backgroundColor: data.reserved ? 'red' : 'green',
+            color: 'black',
+          }}
+        >
+          {displayReservedText(data.reserved)}
+        </button>
+        {' '}
         <hr />
       </div>
     ));
