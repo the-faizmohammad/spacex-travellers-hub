@@ -27,6 +27,8 @@ const Rockets = () => {
       <div key={data.id}>
         <h2>{data.rocket_name}</h2>
         <p>{data.description}</p>
+        <img src={data.flickr_images[0]} alt={data.rocket_name} style={{ width: '100px', height: '100px' }} />
+        <p>{data.description}</p>
         <hr />
       </div>
     ));
