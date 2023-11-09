@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Rockets />} />
         <Route path="/mission" element={<Mission />} />
-        <Route exact path="/dragons" element={<Dragons />} />
+        <Route path="/Dragons" element={<Dragons />} />
         <Route path="/MyProfile" element={<MyProfile />} />
 
       </Routes>
