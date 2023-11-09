@@ -45,7 +45,7 @@ const Mission = () => {
                       className="mb-2"
                       id="toggle-check"
                       type="checkbox"
-                      variant="outline-primary"
+                      variant="dark"
                       checked={checked}
                       value="1"
                       onChange={(e) => setChecked(e.currentTarget.checked)}
@@ -58,7 +58,7 @@ const Mission = () => {
                       <ToggleButton
                         id="toggle-check"
                         type="checkbox"
-                        variant="secondary"
+                        variant="outline-dark"
                         checked={checked}
                         value="1"
                       >
