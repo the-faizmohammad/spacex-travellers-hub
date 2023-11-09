@@ -1,10 +1,9 @@
+// Dragons.js
 import React from 'react';
 
 const Dragons = () => (
   <div>
-    <div>
-      <h2>Dragons</h2>
-    </div>
+    <h2>Dragons</h2>
   </div>
 );
 
