@@ -6,8 +6,8 @@ import { Provider } from 'react-redux';
 import App from './App';
 import store from './redux/store';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const container = document.getElementById('root');
+const root = createRoot(container); root.render(
   <React.StrictMode>
     <Provider store={store}>
       <BrowserRouter>
