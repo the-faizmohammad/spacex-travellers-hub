@@ -1,11 +1,9 @@
 import React from 'react';
 
-const Dragons = () => (
+const dragons = () => (
   <div>
-    <div>
-      <h2>Dragons</h2>
-    </div>
+    <h2>Dragons</h2>
   </div>
 );
 
-export default Dragons;
+export default dragons;

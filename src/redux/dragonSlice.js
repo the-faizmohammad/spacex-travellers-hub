@@ -14,7 +14,7 @@ export const fetchdragons = createAsyncThunk('dragon/fetchdragons', async () => 
     const result = response.data;
     return result;
   } catch (err) {
-    throw new Error('Failed to Fetch missions');
+    throw new Error('Failed to Fetch dragons');
   }
 });
 
