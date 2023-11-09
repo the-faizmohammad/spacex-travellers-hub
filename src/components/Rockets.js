@@ -5,6 +5,7 @@ import {
   getRocketsStatus,
   getRocketsError,
   fetchRockets,
+  reserveRocket,
 } from '../redux/rocketsSlice';
 
 const Rockets = () => {
@@ -18,6 +19,14 @@ const Rockets = () => {
       dispatch(fetchRockets());
     }
   }, [rocketStatus, dispatch]);
+
+  function displayReservedText(currState) {
+    return currState ? 'Cancel Reservation' : 'Reserve Rockets';
+  }
+
+  function handleReserveRocket(id) {
+    dispatch(reserveRocket(id));
+  }
 
   let contentToDisplay = '';
   if (rocketStatus === 'loading') {
