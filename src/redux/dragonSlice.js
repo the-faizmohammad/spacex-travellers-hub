@@ -25,7 +25,9 @@ const dragonSlice = createSlice({
     reserveDragon: (state, action) => {
       const { id } = action.payload;
 
-      state.data = state.data.map((dragon) => (dragon.id !== id ? dragon : { ...dragon, reserved: true }));
+      state.data = state.data.map((dragon) => (
+        dragon.id !== id ? dragon : { ...dragon, reserved: true }
+      ));
     },
   },
   extraReducers: (builder) => {
