@@ -19,6 +19,10 @@ export const fetchMissions = createAsyncThunk('mission/fetchMissions', async () 
     throw new Error('Failed to Fetch missions');
   }
 });
+export const getReservedMissionTitles = (state) => {
+  const reservedMissions = state.mission.data.filter((mission) => mission.reserved);
+  return reservedMissions.map((mission) => mission.mission_name);
+};
 
 const missionSlice = createSlice({
   name: 'mission',
@@ -29,6 +33,17 @@ const missionSlice = createSlice({
       const updatedMissions = state.data.map((mission) => {
         if (mission.mission_id !== id) return mission;
         return { ...mission, reserved: true };
+      });
+      return {
+        ...state,
+        data: updatedMissions,
+      };
+    },
+    leaveMission: (state, action) => {
+      const { id } = action.payload;
+      const updatedMissions = state.data.map((mission) => {
+        if (mission.mission_id !== id) return mission;
+        return { ...mission, reserved: false };
       });
       return {
         ...state,
@@ -51,5 +66,5 @@ const missionSlice = createSlice({
   },
 });
 
-export const { reserveMission } = missionSlice.actions;
+export const { reserveMission, leaveMission } = missionSlice.actions;
 export default missionSlice.reducer;
