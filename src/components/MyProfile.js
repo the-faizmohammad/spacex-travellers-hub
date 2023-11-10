@@ -7,23 +7,14 @@ import {
 } from '../redux/rocketsSlice';
 import { getReservedMissionTitles } from '../redux/missionSlice';
 import '../styles/MyProfile.css';
-import { reserveDragon } from '../redux/dragonSlice';
-
+import { getReservedDragons } from '../redux/dragonSlice';
 
 const MyProfile = () => {
   const dispatch = useDispatch();
   const rockets = useSelector(getReservedRockets);
   const rocketStatus = useSelector(getRocketsStatus);
   const reservedMissionTitles = useSelector(getReservedMissionTitles);
-
-  let renderReservedDragons = '';
-  if (reservedDragons.length) {
-    renderReservedDragons = reservedDragons.map((dragon) => (
-      <li key={dragon.id}>
-        <span>{dragon.name}</span>
-      </li>
-    ));
-  }
+  const dragons = useSelector(getReservedDragons);
 
   useEffect(() => {
     dispatch(myReservedRockets());
@@ -34,6 +25,15 @@ const MyProfile = () => {
     renderReserved = rockets.map((data) => (
       <li key={data.id}>
         <span>{data.rocket_name}</span>
+      </li>
+    ));
+  }
+
+  let renderedDragons = '';
+  if (dragons.length) {
+    renderedDragons = dragons.map((data) => (
+      <li key={data.id}>
+        <span>{data.name}</span>
       </li>
     ));
   }
@@ -69,7 +69,7 @@ const MyProfile = () => {
         <h2 className="title">My Dragons</h2>
         <table className="Mission-ProfileTable">
           <tbody>
-            {renderReserveDragon || 'No Reserved Dragons.'}
+            {renderedDragons || 'No Reserved Dragons.'}
           </tbody>
         </table>
       </div>

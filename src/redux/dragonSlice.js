@@ -24,21 +24,20 @@ const dragonSlice = createSlice({
   initialState,
   reducers: {
     reserveDragon: (state, action) => {
-      const { id } = action.payload;
-      const dragon = state.data.find((d) => d.id === id);
+      const dragon = action.payload; 
+      const existingDragon = state.data.find((d) => d.id === dragon.id);
 
-      if (dragon) {
-        dragon.reserved = !dragon.reserved;
+      if (existingDragon) {
+        existingDragon.reserved = !existingDragon.reserved;
 
-        if (dragon.reserved) {
-          state.reserved.push(dragon);
+        if (existingDragon.reserved) {
+          state.reserved.push(existingDragon);
         } else {
-          state.reserved = state.reserved.filter((d) => d.id !== dragon.id);
+          state.reserved = state.reserved.filter((d) => d.id !== existingDragon.id);
         }
       }
     },
   },
-
   extraReducers: (builder) => {
     builder
       .addCase(fetchdragons.pending, (state) => {
@@ -53,6 +52,6 @@ const dragonSlice = createSlice({
       });
   },
 });
-
+export const getReservedDragons = (state) => state.dragon.reserved;
 export const { reserveDragon } = dragonSlice.actions;
 export default dragonSlice.reducer;
