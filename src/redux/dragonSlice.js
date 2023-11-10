@@ -24,7 +24,7 @@ const dragonSlice = createSlice({
   initialState,
   reducers: {
     reserveDragon: (state, action) => {
-      const dragon = action.payload; 
+      const dragon = action.payload;
       const existingDragon = state.data.find((d) => d.id === dragon.id);
 
       if (existingDragon) {
