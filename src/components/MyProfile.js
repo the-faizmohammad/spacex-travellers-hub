@@ -6,10 +6,13 @@ import {
   getRocketsStatus,
 } from '../redux/rocketsSlice';
 import '../styles/MyProfile.css';
-const MyProfile = () => (
-  <div>
-    <h2>My Profile</h2>
-  </div>
-);
+
+const MyProfile = () => {
+  const dispatch = useDispatch();
+  const rockets = useSelector(getReservedRockets);
+  const rocketStatus = useSelector(getRocketsStatus);
+
+  
+};
 
 export default MyProfile;
