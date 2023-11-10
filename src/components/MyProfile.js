@@ -13,6 +13,20 @@ const MyProfile = () => {
   const rocketStatus = useSelector(getRocketsStatus);
 
   
+
+  return (
+    <div className="result">
+      <div className="Box">
+        <h2 className="title">My Rockets</h2>
+        <table className="Mission-ProfileTable">
+          <tbody className="filter-list">
+            {renderReserved}
+          </tbody>
+        </table>
+      </div>
+      
+    </div>
+  );
 };
 
 export default MyProfile;
