@@ -33,40 +33,24 @@ const Rockets = () => {
     contentToDisplay = <h2>Loading...</h2>;
   } else if (rocketStatus === 'succeeded') {
     contentToDisplay = rockets.map((data) => (
-      <div key={data.id}>
-        <h2>{data.rocket_name}</h2>
-
-        <p>{data.description}</p>
-        <img src={data.flickr_images[0]} alt={data.rocket_name} style={{ width: '100px', height: '100px' }} />
-        <p>
-          {data.reserved && (
-            <span
-              style={{
-                marginRight: 10,
-                border: '1px solid',
-                padding: '2px 4px',
-                backgroundColor: 'aqua',
-                color: 'white',
-              }}
-            >
-              Reserved
-            </span>
-          )}
-        </p>
-        <button
-          onClick={() => handleReserveRocket(data.id)}
-          type="button"
-          style={{
-            margin: '5px',
-            padding: '5px 10px',
-            backgroundColor: data.reserved ? 'red' : 'green',
-            color: 'black',
-          }}
-        >
-          {displayReservedText(data.reserved)}
-        </button>
-        {' '}
-        <hr />
+      <div key={data.id} className="rocket-card">
+        <div className="img-wrapper">
+          <img src={data.flickr_images[0]} alt={data.rocket_name} className="rocket-img" />
+        </div>
+        <div className="rocket-info">
+          <h1 className="rocket-name">{data.rocket_name}</h1>
+          <p className="desc">
+            {data.reserved && <span className="badge">Reserved</span>}
+            {data.description}
+          </p>
+          <button
+            onClick={() => handleReserveRocket(data.id)}
+            type="button"
+            className={data.reserved ? 'reserved-button' : 'reserve-button'}
+          >
+            {displayReservedText(data.reserved)}
+          </button>
+        </div>
       </div>
     ));
   } else if (rocketStatus === 'failed') {
@@ -75,7 +59,6 @@ const Rockets = () => {
 
   return (
     <div>
-      <h1>Rockets page</h1>
       {contentToDisplay}
     </div>
   );
