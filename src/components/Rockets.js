@@ -47,7 +47,7 @@ const Rockets = () => {
           <button
             onClick={() => handleReserveRocket(data.id)}
             type="button"
-            className={data.reserved ? 'reserved-button' : 'reserve-button'}
+            className={data.reserved ? 'reserved' : 'not-reserved'}
           >
             {displayReservedText(data.reserved)}
           </button>
