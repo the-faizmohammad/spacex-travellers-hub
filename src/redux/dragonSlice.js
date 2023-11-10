@@ -4,6 +4,7 @@ import axios from 'axios';
 const initialState = {
   data: [],
   isloading: false,
+  reserved: [],
 };
 
 const dragonsApi = 'https://api.spacexdata.com/v4/dragons';
@@ -23,11 +24,18 @@ const dragonSlice = createSlice({
   initialState,
   reducers: {
     reserveDragon: (state, action) => {
-      const { id } = action.payload;
+      const dragon = action.payload;
+      const existingDragon = state.data.find((d) => d.id === dragon.id);
 
-      state.data = state.data.map((dragon) => (
-        dragon.id !== id ? dragon : { ...dragon, reserved: true }
-      ));
+      if (existingDragon) {
+        existingDragon.reserved = !existingDragon.reserved;
+
+        if (existingDragon.reserved) {
+          state.reserved.push(existingDragon);
+        } else {
+          state.reserved = state.reserved.filter((d) => d.id !== existingDragon.id);
+        }
+      }
     },
   },
   extraReducers: (builder) => {
@@ -44,6 +52,6 @@ const dragonSlice = createSlice({
       });
   },
 });
-
+export const getReservedDragons = (state) => state.dragon.reserved;
 export const { reserveDragon } = dragonSlice.actions;
 export default dragonSlice.reducer;

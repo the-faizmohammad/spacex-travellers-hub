@@ -1,0 +1,7 @@
+.card-img,
+.card-img-top {
+  border-top-left-radius: var(--bs-card-inner-border-radius);
+  border-top-right-radius: var(--bs-card-inner-border-radius);
+  width: 50vw;
+  height: auto;
+}
