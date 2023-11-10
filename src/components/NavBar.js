@@ -7,7 +7,7 @@ const NavBar = () => {
     { path: '/', title: 'Rockets', className: 'noactive-link' },
     { path: '/mission', title: 'Missions', className: 'noactive-link' },
     { path: '/dragons', title: 'Dragons', className: 'noactive-link' },
-    { path: '/my-profile', title: 'My Profile', className: 'noactive-link' },
+    { path: '/MyProfile', title: 'My Profile', className: 'noactive-link' },
   ];
 
   return (
