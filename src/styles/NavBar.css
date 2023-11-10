@@ -1,25 +1,54 @@
-.logo-section {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+.nav {
   display: flex;
-  gap: 0.8rem;
-  justify-content: center;
+  padding: 20px;
+}
+
+.logo {
+  flex: 1;
+  display: flex;
   align-items: center;
-  font-size: 40px;
-  font-weight: 600;
+  margin: 0 2rem;
 }
 
-.active {
-  background-color: beige;
+.img-logo {
+  width: 6rem;
+  height: auto;
 }
 
-.nav-container {
-  display: flex;
-  justify-content: space-between;
+.text-logo {
+  font-size: 2.2rem;
+  font-family: 'Poppins', sans-serif;
+  padding: 0 30px;
 }
 
 .nav-links {
+  flex: 1;
   display: flex;
-  justify-content: space-between;
-  list-style: none;
-  gap: 20px;
   align-items: center;
+  justify-content: flex-end;
+}
+
+.link-list {
+  display: flex;
+  padding: 10px;
+  margin-right: 20px;
+  list-style: none;
+}
+
+.nav-item {
+  padding: 0 0 0 20px;
+}
+
+.noactive-link {
+  color: #2ea8d1;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+.active {
+  color: #206fdf;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
 }
