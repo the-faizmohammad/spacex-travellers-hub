@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
-import { fetchMissions, reserveMission } from '../redux/missionSlice';
+import { fetchMissions, reserveMission, leaveMission } from '../redux/missionSlice';
 
 const Mission = () => {
   const dispatch = useDispatch();
@@ -17,8 +17,12 @@ const Mission = () => {
     dispatch(fetchMissions());
   }, [dispatch]);
 
-  const handleJoinMission = (id) => {
-    dispatch(reserveMission({ id }));
+  const handleJoinLeaveMission = (mission) => {
+    if (mission.reserved) {
+      dispatch(leaveMission({ id: mission.mission_id }));
+    } else {
+      dispatch(reserveMission({ id: mission.mission_id }));
+    }
   };
 
   return (
@@ -59,7 +63,7 @@ const Mission = () => {
                           id="toggle-check"
                           type="checkbox"
                           variant={mission.reserved ? 'outline-danger' : 'outline-dark'}
-                          onClick={() => handleJoinMission(mission.mission_id)}
+                          onClick={() => handleJoinLeaveMission(mission)}
                         >
                           {mission.reserved ? 'Leave Mission' : 'Join Mission'}
                         </ToggleButton>
