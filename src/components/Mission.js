@@ -14,8 +14,10 @@ const Mission = () => {
   const [statusText] = useState('Not a member');
 
   useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
+    if (!missions.length) {
+      dispatch(fetchMissions());
+    }
+  }, [dispatch, missions]);
 
   const handleJoinLeaveMission = (mission) => {
     if (mission.reserved) {

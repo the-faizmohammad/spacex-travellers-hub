@@ -19,6 +19,10 @@ export const fetchMissions = createAsyncThunk('mission/fetchMissions', async () 
     throw new Error('Failed to Fetch missions');
   }
 });
+export const getReservedMissionTitles = (state) => {
+  const reservedMissions = state.mission.data.filter((mission) => mission.reserved);
+  return reservedMissions.map((mission) => mission.mission_name);
+};
 
 const missionSlice = createSlice({
   name: 'mission',

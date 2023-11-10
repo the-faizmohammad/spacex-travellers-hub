@@ -5,12 +5,14 @@ import {
   getReservedRockets,
   getRocketsStatus,
 } from '../redux/rocketsSlice';
+import { getReservedMissionTitles } from '../redux/missionSlice';
 import '../styles/MyProfile.css';
 
 const MyProfile = () => {
   const dispatch = useDispatch();
   const rockets = useSelector(getReservedRockets);
   const rocketStatus = useSelector(getRocketsStatus);
+  const reservedMissionTitles = useSelector(getReservedMissionTitles);
 
   useEffect(() => {
     dispatch(myReservedRockets());
@@ -21,6 +23,15 @@ const MyProfile = () => {
     renderReserved = rockets.map((data) => (
       <li key={data.id}>
         <span>{data.rocket_name}</span>
+      </li>
+    ));
+  }
+
+  let renderReservedMissions = '';
+  if (reservedMissionTitles.length) {
+    renderReservedMissions = reservedMissionTitles.map((title) => (
+      <li key={title}>
+        <span>{title}</span>
       </li>
     ));
   }
@@ -39,7 +50,7 @@ const MyProfile = () => {
         <h2 className="title">My Missions</h2>
         <table className="Mission-ProfileTable">
           <tbody>
-            Coming Soon
+            {renderReservedMissions || 'No reserved missions.'}
           </tbody>
         </table>
       </div>
