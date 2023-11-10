@@ -16,5 +16,4 @@ const root = createRoot(container); root.render(
       </BrowserRouter>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root'),
 );
