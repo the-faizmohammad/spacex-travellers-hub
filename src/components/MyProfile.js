@@ -42,7 +42,7 @@ const MyProfile = () => {
         <h2 className="title">My Rockets</h2>
         <table className="Mission-ProfileTable">
           <tbody className="filter-list">
-            {renderReserved}
+            {renderReserved || 'No Reserved Rockets'}
           </tbody>
         </table>
       </div>
@@ -50,7 +50,7 @@ const MyProfile = () => {
         <h2 className="title">My Missions</h2>
         <table className="Mission-ProfileTable">
           <tbody>
-            {renderReservedMissions || 'No reserved missions.'}
+            {renderReservedMissions || 'No Reserved Missions.'}
           </tbody>
         </table>
       </div>
