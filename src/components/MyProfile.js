@@ -7,12 +7,23 @@ import {
 } from '../redux/rocketsSlice';
 import { getReservedMissionTitles } from '../redux/missionSlice';
 import '../styles/MyProfile.css';
+import { reserveDragon } from '../redux/dragonSlice';
+
 
 const MyProfile = () => {
   const dispatch = useDispatch();
   const rockets = useSelector(getReservedRockets);
   const rocketStatus = useSelector(getRocketsStatus);
   const reservedMissionTitles = useSelector(getReservedMissionTitles);
+
+  let renderReservedDragons = '';
+  if (reservedDragons.length) {
+    renderReservedDragons = reservedDragons.map((dragon) => (
+      <li key={dragon.id}>
+        <span>{dragon.name}</span>
+      </li>
+    ));
+  }
 
   useEffect(() => {
     dispatch(myReservedRockets());
@@ -58,7 +69,7 @@ const MyProfile = () => {
         <h2 className="title">My Dragons</h2>
         <table className="Mission-ProfileTable">
           <tbody>
-            Coming Soon
+            {renderReserveDragon || 'No Reserved Dragons.'}
           </tbody>
         </table>
       </div>
