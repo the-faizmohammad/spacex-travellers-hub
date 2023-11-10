@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
-import { fetchdragons } from '../redux/dragonSlice';
+import { fetchdragons, reserveDragon } from '../redux/dragonSlice';
 
 const Dragons = () => {
   const dispatch = useDispatch();
@@ -11,6 +11,10 @@ const Dragons = () => {
   useEffect(() => {
     dispatch(fetchdragons());
   }, [dispatch]);
+
+  const handleReserveDragon = (id) => {
+    dispatch(reserveDragon({ id }));
+  };
 
   if (isLoading) {
     return <p>Loading dragons...</p>;
@@ -30,6 +34,9 @@ const Dragons = () => {
                 {dragon.type}
               </ListGroupItem>
             </ListGroup>
+            <button type="button" onClick={() => handleReserveDragon(dragon.id)}>
+              Reserve Dragon
+            </button>
           </Card.Body>
         </Card>
       ))}

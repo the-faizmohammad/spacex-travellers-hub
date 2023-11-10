@@ -21,21 +21,27 @@ export const fetchdragons = createAsyncThunk('dragon/fetchdragons', async () => 
 const dragonSlice = createSlice({
   name: 'dragon',
   initialState,
-  reducers: {},
+  reducers: {
+    reserveDragon: (state, action) => {
+      const { id } = action.payload;
+
+      state.data = state.data.map((dragon) => (dragon.id !== id ? dragon : { ...dragon, reserved: true }));
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchdragons.pending, (state) => {
-        state.isloading = true;
+        state.isLoading = true;
       })
       .addCase(fetchdragons.fulfilled, (state, action) => {
-        state.isloading = false;
+        state.isLoading = false;
         state.data = action.payload;
       })
       .addCase(fetchdragons.rejected, (state) => {
-        state.isloading = false;
+        state.isLoading = false;
       });
   },
-
 });
 
+export const { reserveDragon } = dragonSlice.actions;
 export default dragonSlice.reducer;
