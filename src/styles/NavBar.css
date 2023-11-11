@@ -42,7 +42,7 @@
 }
 
 .noactive-link {
-  color: #2ea8d1;
+  color: #206fdf;
   font-family: 'Poppins', sans-serif;
   text-decoration: none;
 }
@@ -51,4 +51,15 @@
   color: #206fdf;
   border-bottom-width: 1px;
   border-bottom-style: solid;
+}
+
+.divider {
+  width: 2px;
+  height: 14px;
+  background-color: #000;
+  margin: 6px;
+}
+
+.div-container {
+  margin-right: -12px;
 }

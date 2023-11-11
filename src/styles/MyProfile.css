@@ -33,4 +33,6 @@
 
 .filter-list {
   list-style: none;
+  padding: 8px;
+  border: 1px solid;
 }
