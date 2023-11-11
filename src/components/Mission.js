@@ -5,7 +5,7 @@ import Table from 'react-bootstrap/Table';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ButtonGroup from 'react-bootstrap/ButtonGroup';
 import ToggleButton from 'react-bootstrap/ToggleButton';
-import { fetchMissions, reserveMission, leaveMission } from '../redux/missionSlice';
+import { fetchMissions, reserveMission, leaveMission } from '../redux/Mission/missionSlice';
 
 const Mission = () => {
   const dispatch = useDispatch();

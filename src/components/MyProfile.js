@@ -4,10 +4,10 @@ import {
   myReservedRockets,
   getReservedRockets,
   getRocketsStatus,
-} from '../redux/rocketsSlice';
-import { getReservedMissionTitles } from '../redux/missionSlice';
+} from '../redux/Rockets/rocketsSlice';
+import { getReservedMissionTitles } from '../redux/Mission/missionSlice';
 import '../styles/MyProfile.css';
-import { getReservedDragons } from '../redux/dragonSlice';
+import { getReservedDragons } from '../redux/Dragon/dragonSlice';
 
 const MyProfile = () => {
   const dispatch = useDispatch();

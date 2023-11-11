@@ -6,7 +6,7 @@ import {
   getRocketsError,
   fetchRockets,
   reserveRocket,
-} from '../redux/rocketsSlice';
+} from '../redux/Rockets/rocketsSlice';
 import '../styles/Rockets.css';
 
 const Rockets = () => {

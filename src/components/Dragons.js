@@ -4,7 +4,7 @@ import {
   Card, Button, Row, Col, Badge,
 } from 'react-bootstrap';
 import '../styles/Mission.css';
-import { fetchdragons, reserveDragon } from '../redux/dragonSlice';
+import { fetchdragons, reserveDragon } from '../redux/Dragon/dragonSlice';
 
 const Dragons = () => {
   const dispatch = useDispatch();
