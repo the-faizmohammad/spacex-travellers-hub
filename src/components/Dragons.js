@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  Card, Button, Row, Col,
+  Card, Button, Row, Col, Badge,
 } from 'react-bootstrap';
 import '../styles/Mission.css';
 import { fetchdragons, reserveDragon } from '../redux/dragonSlice';
@@ -31,18 +31,20 @@ const Dragons = () => {
         <Col key={dragon.id}>
           <Card className="h-100">
             <Row className="align-items-center">
-              <Col md={6}>
+              <Col md={2}>
                 <Card.Img variant="top" src={dragon.flickr_images[0]} alt={dragon.name} />
               </Col>
-              <Col md={6}>
+              <Col md={10}>
                 <Card.Body>
                   <Card.Title>{dragon.name}</Card.Title>
+                  {dragon.reserved && <Badge style={{ backgroundColor: '#31a2b8' }}>Reserved</Badge>}
+                  {' '}
                   <Card.Text>{dragon.description}</Card.Text>
                   <Button
                     onClick={() => handleReserveDragon(dragon.id)}
-                    className={dragon.reserved ? 'btn-danger' : 'btn-primary'}
+                    variant={dragon.reserved ? 'outline-dark' : 'primary'}
                   >
-                    {dragon.reserved ? 'Reserved' : 'Reserve Dragon'}
+                    {dragon.reserved ? 'Cancel Reservation' : 'Reserve Dragon'}
                   </Button>
                 </Card.Body>
               </Col>
