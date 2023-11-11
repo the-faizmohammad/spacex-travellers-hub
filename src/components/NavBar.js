@@ -22,7 +22,7 @@ const NavBar = () => {
           {Links.map((link, index) => (
             <React.Fragment key={link.title}>
               <div className="div-container">
-              {index == 3 && <div className="divider" />}
+                {index === 3 && <div className="divider" />}
               </div>
               <li className="nav-item" key={link.title}>
                 <NavLink to={link.path} activeclassname="active-link" className={link.className}>
