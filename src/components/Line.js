@@ -1,7 +1,7 @@
 import '../styles/Line.css';
 
 const Line = () => (
-  <div className="Line" />
+  <div className="Line" data-testid="line" />
 );
 
 export default Line;

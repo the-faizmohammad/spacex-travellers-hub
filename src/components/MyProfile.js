@@ -23,7 +23,7 @@ const MyProfile = () => {
   let renderReserved = '';
   if (rockets.length) {
     renderReserved = rockets.map((data) => (
-      <li key={data.id}>
+      <li className="filter-list" key={data.id}>
         <span>{data.rocket_name}</span>
       </li>
     ));
@@ -32,7 +32,7 @@ const MyProfile = () => {
   let renderedDragons = '';
   if (dragons.length) {
     renderedDragons = dragons.map((data) => (
-      <li key={data.id}>
+      <li className="filter-list" key={data.id}>
         <span>{data.name}</span>
       </li>
     ));
@@ -41,7 +41,7 @@ const MyProfile = () => {
   let renderReservedMissions = '';
   if (reservedMissionTitles.length) {
     renderReservedMissions = reservedMissionTitles.map((title) => (
-      <li key={title}>
+      <li className="filter-list" key={title}>
         <span>{title}</span>
       </li>
     ));
@@ -52,7 +52,7 @@ const MyProfile = () => {
       <div className="Box">
         <h2 className="title">My Rockets</h2>
         <table className="Mission-ProfileTable">
-          <tbody className="filter-list">
+          <tbody>
             {renderReserved || 'No Reserved Rockets'}
           </tbody>
         </table>
