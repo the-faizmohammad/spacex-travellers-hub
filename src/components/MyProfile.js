@@ -20,32 +20,11 @@ const MyProfile = () => {
     dispatch(myReservedRockets());
   }, [rocketStatus, dispatch]);
 
-  let renderReserved = '';
-  if (rockets.length) {
-    renderReserved = rockets.map((data) => (
-      <li className="filter-list" key={data.id}>
-        <span>{data.rocket_name}</span>
-      </li>
-    ));
-  }
+  const joinedMissions = reservedMissionTitles.filter((title) => title);
 
-  let renderedDragons = '';
-  if (dragons.length) {
-    renderedDragons = dragons.map((data) => (
-      <li className="filter-list" key={data.id}>
-        <span>{data.name}</span>
-      </li>
-    ));
-  }
+  const reservedRockets = rockets.filter((data) => data);
 
-  let renderReservedMissions = '';
-  if (reservedMissionTitles.length) {
-    renderReservedMissions = reservedMissionTitles.map((title) => (
-      <li className="filter-list" key={title}>
-        <span>{title}</span>
-      </li>
-    ));
-  }
+  const reservedDragons = dragons.filter((data) => data);
 
   return (
     <div className="result">
@@ -53,23 +32,55 @@ const MyProfile = () => {
         <h2 className="title">My Rockets</h2>
         <table className="Mission-ProfileTable">
           <tbody>
-            {renderReserved || 'No Reserved Rockets'}
+            {reservedRockets.length > 0 ? (
+              reservedRockets.map((data) => (
+                <li className="filter-list" key={data.id}>
+                  <span>{data.rocket_name}</span>
+                </li>
+              ))
+            ) : (
+              <tr>
+                <td>No Reserved Rockets.</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
+
       <div className="Box">
         <h2 className="title">My Missions</h2>
         <table className="Mission-ProfileTable">
           <tbody>
-            {renderReservedMissions || 'No Reserved Missions.'}
+            {joinedMissions.length > 0 ? (
+              joinedMissions.map((title) => (
+                <li className="filter-list" key={title}>
+                  <span>{title}</span>
+                </li>
+              ))
+            ) : (
+              <tr>
+                <td>No Joined Missions.</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
+
       <div className="Box">
         <h2 className="title">My Dragons</h2>
         <table className="Mission-ProfileTable">
           <tbody>
-            {renderedDragons || 'No Reserved Dragons.'}
+            {reservedDragons.length > 0 ? (
+              reservedDragons.map((data) => (
+                <li className="filter-list" key={data.id}>
+                  <span>{data.name}</span>
+                </li>
+              ))
+            ) : (
+              <tr>
+                <td>No Reserved Dragons.</td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
