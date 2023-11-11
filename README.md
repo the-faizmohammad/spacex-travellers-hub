@@ -48,7 +48,7 @@
 ### Key Features <a name="key-features"></a>
 
 - **[Mission Join/Leave]**
-- **[Dragons Reservation]**C
+- **[Dragons Reservation]**
 - **[Rockets Reservation]**
 - **[My Profile to display user reservations]**
 
@@ -57,7 +57,10 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- LIVE DEMO -->
+### Live demo <a name="live-demo"></a>
+
+[Live Demo](https://space-x-travellers-hub.onrender.com)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -104,13 +107,14 @@ in a ternimal, type npm run test
 
 You can deploy this project using:
 
-**Github Pages**
+**render**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- AUTHORS -->
 
-## 👥 Authors <a name="authors">Enoh Collins</a>
+## 👥 Authors <a name="authors"></a>
 
 👤 **Austin Obimbo**
 
@@ -152,7 +156,7 @@ Feel free to check the [issues page] (https://github.com/the-faizmohammad/spacex
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project follow Me on my social media
+If you like this definely star the project. Grab a virtual coffee session with th team.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
